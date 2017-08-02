@@ -22,9 +22,10 @@ original knobs.
 
 You should print these using support material. After printing, remove
 the support material. You may need to file the hole for the shaft
-slightly to get it to fit. An 8-32 set screw of suitable length is
-needed to tighten the knob on the shaft. For the knobs that have
-pointers, you can apply some white paint on the pointer.
+slightly to get it to fit. An 8-32 set screw (6-32 for the small knob)
+of suitable length is needed to tighten the knob on the shaft. For the
+knobs that have pointers, you can apply some white paint on the
+pointer.
 
 I used PLA material. You can experiment with other materials. ABS, for
 example, could potentially be treated with acetone to make the knobs
