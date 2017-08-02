@@ -13,13 +13,13 @@ main_width_upper = 36.4;
 main_height = 16.2;
 
 ring_height = 1.0;
-ring_width_outer = 32.9;
-ring_width_inner = 30.2;
+ring_width_outer = 33.9;
+ring_width_inner = 31.2;
 
 arrow_height = 0.0;
 
 knurl_width = 1.5;
-knurl_count = 45;
+knurl_count = 46;
 knurl_depth = 0.6;
 unknurled_height = 0.0;
 
@@ -27,10 +27,10 @@ screw_hole_width=4.2;
 screw_hole_height=6.9;
 
 bottom_hole_height=15;
-bottom_hole_width=6.5;
+bottom_hole_width=6.7;
 
 inner_hole_height=15;
-inner_hole_width=6.5;
+inner_hole_width=6.7;
 
 module arrow() {
     
