@@ -12,9 +12,9 @@ main_width_lower = 14.0;
 main_width_upper = 13.3;
 main_height = 10.0;
 
-ring_height = 1.0;
+ring_height = 1.5;
 ring_width_outer = 13.1;
-ring_width_inner = 12.1;
+ring_width_inner = 11.1;
 
 arrow_height = 0.0;
 

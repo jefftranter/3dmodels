@@ -1,5 +1,3 @@
-[add picture]
-
 These are 3D models for some knobs for Heathkit equipment.
 
 knob-medium: Medium sized knob used on test equipment and radios like
@@ -21,12 +19,22 @@ highest quality, but don't expect the quality to be the same as the
 original knobs.
 
 You should print these using support material. After printing, remove
-the support material. You may need to file the hole for the shaft
-slightly to get it to fit. An 8-32 set screw (6-32 for the small knob)
-of suitable length is needed to tighten the knob on the shaft. For the
+the support material. I used 20% infill. You may want to use 100% on
+the small knob. You may need to file the hole for the shaft slightly
+to get it to fit. An 8-32 set screw (6-32 for the small knob) of
+suitable length is needed to tighten the knob on the shaft. For the
 knobs that have pointers, you can apply some white paint on the
 pointer.
 
 I used PLA material. You can experiment with other materials. ABS, for
 example, could potentially be treated with acetone to make the knobs
 smoother.
+
+To Do:
+
+Small knob should have a pointer.
+
+Make separate model for pointer for laege knob (used on some heathkits).
+
+Add additional knobs, like the concentric medium and small versions
+used on some signal generators and power supplies.
