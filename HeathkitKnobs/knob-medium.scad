@@ -122,7 +122,7 @@ ring();
 
 // Arrow
 translate([0,0,arrow_height])
-arrow();    
+arrow();
 knurls2();
     }
 
