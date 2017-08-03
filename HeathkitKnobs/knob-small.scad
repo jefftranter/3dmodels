@@ -1,11 +1,11 @@
 // Function count - increase to improve object resolution
 $fn=64;
 
-b1_height = 1.3;
+b1_height = 3.0;
 b1_width = 14.0;
 
-b2_width_lower = 36.6;
-b2_width_upper = 36.6;
+b2_width_lower = 0.0;
+b2_width_upper = 0.0;
 b2_height = 0.0;
 
 main_width_lower = 14.0;
@@ -23,13 +23,13 @@ knurl_count = 20;
 knurl_depth = 0.6;
 unknurled_height = 0.0;
 
-screw_hole_width=2.5;
-screw_hole_height=4.5;
+screw_hole_width=3.0;
+screw_hole_height=5.5;
 
-bottom_hole_height=11;
+bottom_hole_height=10.0;
 bottom_hole_width=6.7;
 
-inner_hole_height=11;
+inner_hole_height=10.0;
 inner_hole_width=6.7;
 
 module arrow() {
