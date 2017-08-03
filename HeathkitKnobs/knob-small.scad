@@ -23,7 +23,7 @@ knurl_count = 20;
 knurl_depth = 0.6;
 unknurled_height = 0.0;
 
-screw_hole_width=3.0;
+screw_hole_width=3.2;
 screw_hole_height=6.0;
 
 bottom_hole_height=10.0;
