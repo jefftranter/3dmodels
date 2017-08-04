@@ -9,6 +9,9 @@ the Heathkit HR-10B.
 knob-small: Small sized knob used on test equipment and radios like
 the Heathkit HR-10B.
 
+pointer: White pointer that is mounted under the large knob on some
+models.
+
 The .scad files are the original OpenSCAD files that were created by
 hand. The .stl files were generated from OpenSCAD and are suitable for
 loading into your 3D printer/slicer software, such as Cura.
@@ -33,8 +36,6 @@ smoother.
 To Do:
 
 Small knob should have a pointer.
-
-Make separate model for pointer for laege knob (used on some heathkits).
 
 Add additional knobs, like the concentric medium and small versions
 used on some signal generators and power supplies.
