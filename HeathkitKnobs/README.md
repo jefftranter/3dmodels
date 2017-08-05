@@ -40,10 +40,3 @@ pointer.
 I used PLA material. You can experiment with other materials. ABS, for
 example, could potentially be treated with acetone to make the knobs
 smoother.
-
-To Do:
-
-Small knob should have a pointer.
-
-Add additional knobs, like the concentric medium and small versions
-used on some signal generators and power supplies.

@@ -26,11 +26,16 @@ unknurled_height = 0.0;
 screw_hole_width=3.2;
 screw_hole_height=6.0;
 
-bottom_hole_height=10.0;
-bottom_hole_width=6.7;
+// Use 6.7 for version to fit on a 0.25" shaft.
+// Use 5.0 to fit a 0.20" shaft (as on the version used as a concentric knob).
+shaft_width=6.7;
+//shaft_width=5.0;
 
-inner_hole_height=10.0;
-inner_hole_width=6.7;
+bottom_hole_height=12.0;
+bottom_hole_width=shaft_width;
+
+inner_hole_height=12.0;
+inner_hole_width=shaft_width;
 
 module arrow() {
     
@@ -131,16 +136,17 @@ knurls2();
 difference() {
     
 knob();
-    
-    
+
     // Holes
- translate([0,0,screw_hole_height]) rotate([0,-90,0]) cylinder(h=100, r=screw_hole_width/2);
+    translate([0,0,screw_hole_height]) rotate([0,-90,0]) cylinder(h=100, r=screw_hole_width/2);
    
-   //bottom_hole 
- cylinder(h=bottom_hole_height, r=bottom_hole_width/2);
+    // Bottom hole
+    cylinder(h=bottom_hole_height, r=bottom_hole_width/2);
 
-//inner_hole
- cylinder(h=inner_hole_height, r=inner_hole_width/2);
-    }
-    
+    // Inner hole
+    cylinder(h=inner_hole_height, r=inner_hole_width/2);
 
+    // Pointer
+    translate([5.5, -0.75, 13.5], 0) cube([1.5, 1.5, 1.5]);
+
+}
