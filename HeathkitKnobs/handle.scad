@@ -53,6 +53,10 @@ d2=27.1;
 // Slope of handle.
 slope=4.0;
 
+
+// Radius of upper curved corner.
+r1=7.0;
+
 // Adjustment to make sides planar.
 fudge=1.5;
 
@@ -96,15 +100,34 @@ HandleFaces = [
   [13,15,2,0],           // Inside right
 ];
 
+// From  http://forum.openscad.org/rounded-corners-td3843.html
+// I use this module:
+// I either union it to an inside corner or difference it from an
+// outside one.
+
+module fillet(r, h) {
+
+    translate([r/2, r/2, 0])
+    difference() {
+        cube([r + 0.01, r + 0.01, h], center = true);
+        translate([r/2, r/2, 0])
+            cylinder(r = r, h = h + 1, center = true);
+    }
+}
+
+
 difference() {
 
     polyhedron(HandlePoints, HandleFaces);
 
-    // Screw holes.
+    // Remove screw holes.
     {
         translate([0,0,0]) cylinder(d=hole_dia, h=hole_depth);
         translate([w1,0,0]) cylinder(d=hole_dia, h=hole_depth);
     }
+
+
+    translate([-3, 0, h1]) rotate([270, 0, 0]) fillet(r1, d2);
 }
 
 // Text on top of handle. Comment out if not desired.
