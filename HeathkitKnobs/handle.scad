@@ -53,6 +53,9 @@ d2=27.1;
 // Slope of handle.
 slope=4.0;
 
+// Adjustment to make sides planar.
+fudge=1.5;
+
 // Screw hole diameter.
 hole_dia=4.0;
 
@@ -74,10 +77,10 @@ HandlePoints = [
   [w1+w2/2-slope, d1/2, h1], // 9
   [-w2/2+slope, -d1/2, h1], // 10
   [w1+w2/2-slope, -d1/2, h1], // 11
-  [w3/2+slope, d1/2, h1-h2], // 12
-  [w1-w3/2-slope, d1/2, h1-h2], // 13
-  [w3/2+slope, -d1/2, h1-h2], // 14
-  [w1-w3/2-slope, -d1/2, h1-h2], // 15
+  [w3/2+slope, d1/2+fudge, h1-h2], // 12
+  [w1-w3/2-slope, d1/2+fudge, h1-h2], // 13
+  [w3/2+slope, -d1/2-fudge, h1-h2], // 14
+  [w1-w3/2-slope, -d1/2-fudge, h1-h2], // 15
 ];
 
 HandleFaces = [
