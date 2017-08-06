@@ -57,6 +57,9 @@ slope=4.0;
 // Radius of upper curved corner.
 r1=7.0;
 
+// Radius of inner curved corner.
+r1=7.0;
+
 // Adjustment to make sides planar.
 fudge=1.5;
 
@@ -115,7 +118,6 @@ module fillet(r, h) {
     }
 }
 
-
 difference() {
 
     polyhedron(HandlePoints, HandleFaces);
@@ -126,9 +128,15 @@ difference() {
         translate([w1,0,0]) cylinder(d=hole_dia, h=hole_depth);
     }
 
-
-    translate([-3, 0, h1]) rotate([270, 0, 0]) fillet(r1, d2);
+    // Round corners at top.
+    translate([-2.5, 0, h1]) rotate([270, 0, 0]) fillet(r1, d2);
+    translate([w1+2.5, 0, h1]) rotate([90, 180, 0]) fillet(r1, d2);
 }
+
+// Round inside corners.
+translate([w3-2, 0, h1-h2]) rotate([270, 0, 0]) fillet(r1, d1+3);
+translate([w1-w2+4, 0, h1-h2]) rotate([90, 180, 0]) fillet(r1, d1+3);
+
 
 // Text on top of handle. Comment out if not desired.
 translate([w1/2, 0, h1]) linear_extrude(1) {
