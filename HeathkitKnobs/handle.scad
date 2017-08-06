@@ -70,14 +70,14 @@ HandlePoints = [
   [w2/2, d2/2, 0], // 5
   [-w2/2, -d2/2, 0], // 6
   [w2/2, -d2/2, 0], // 7
-  [-w2/2, d1/2, h1], // 8
-  [w1+w2/2, d1/2, h1], // 9
-  [-w2/2, -d1/2, h1], // 10
-  [w1+w2/2, -d1/2, h1], // 11
-  [w3/2, d1/2, h1-h2], // 12
-  [w1-w3/2, d1/2, h1-h2], // 13
-  [w3/2, -d1/2, h1-h2], // 14
-  [w1-w3/2, -d1/2, h1-h2], // 15
+  [-w2/2+slope, d1/2, h1], // 8
+  [w1+w2/2-slope, d1/2, h1], // 9
+  [-w2/2+slope, -d1/2, h1], // 10
+  [w1+w2/2-slope, -d1/2, h1], // 11
+  [w3/2+slope, d1/2, h1-h2], // 12
+  [w1-w3/2-slope, d1/2, h1-h2], // 13
+  [w3/2+slope, -d1/2, h1-h2], // 14
+  [w1-w3/2-slope, -d1/2, h1-h2], // 15
 ];
 
 HandleFaces = [
@@ -93,17 +93,18 @@ HandleFaces = [
   [13,15,2,0],           // Inside right
 ];
 
-//difference() {
+difference() {
 
-polyhedron(HandlePoints, HandleFaces);
+    polyhedron(HandlePoints, HandleFaces);
 
-// Screw holes.
-translate([0,0,-hole_depth]) cylinder(d=hole_dia, h=hole_depth);
-translate([w1,0,-hole_depth]) cylinder(d=hole_dia, h=hole_depth);
+    // Screw holes.
+    {
+        translate([0,0,0]) cylinder(d=hole_dia, h=hole_depth);
+        translate([w1,0,0]) cylinder(d=hole_dia, h=hole_depth);
+    }
+}
 
 // Text on top of handle. Comment out if not desired.
 translate([w1/2, 0, h1]) linear_extrude(1) {
- text(text="H E A T H K I T", size=4, halign="center", valign="center");
+    text(text="H E A T H K I T", size=4, halign="center", valign="center");
 }
-
-
