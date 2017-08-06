@@ -15,6 +15,8 @@ screws approximately 0.5" long. For strength, you probably want to use
     +--+                         +--+ V
     <w2>
       <---------- w1 ------------->
+      ^
+      +- origin
 
     TOP
 
@@ -32,6 +34,9 @@ screws approximately 0.5" long. For strength, you probably want to use
     <-d2->
 
 */
+
+// Function count - increase to improve object resolution
+$fn=64;
 
 // Dimensions: in mm, can be adjusted to create different handles.
 
@@ -52,27 +57,27 @@ slope=4.0;
 hole_dia=4.0;
 
 // Screw hole depth.
-hold_depth=20.0;
+hole_depth=20.0;
 
 // Below won't make much sense without the sketch I made on a piece of
 // paper.
 HandlePoints = [
-  [100, 15+5,  0 ],  // 0
-  [110, 15+5,  0 ],  // 1
-  [100,  0-5,  0 ],  // 2
-  [110,  0-5,  0 ],  // 3
-  [  0, 15+5,  0 ],  // 4
-  [ 10, 15+5,  0 ],  // 5
-  [  0,  0-5,  0 ],  // 6
-  [ 10,  0-5,  0 ],  // 7
-  [  0+5, 15, 25 ],  // 8
-  [110-5, 15, 25 ],  // 9
-  [  0+5,  0, 25 ],  // 10
-  [110-5,  0, 25 ],  // 11
-  [ 10+4, 15+1, 19 ],  // 12
-  [100-4, 15+1, 19 ],  // 13
-  [ 10+4,  0-1, 19 ],  // 14
-  [100-4,  0-1, 19 ],  // 15
+  [w1-w2/2, d2/2, 0], // 0
+  [w1+w2/2, d2/2, 0], // 1
+  [w1-w2/2, -d2/2, 0], // 2
+  [w1+w2/2, -d2/2, 0], // 3
+  [-w2/2, d2/2, 0], // 4
+  [w2/2, d2/2, 0], // 5
+  [-w2/2, -d2/2, 0], // 6
+  [w2/2, -d2/2, 0], // 7
+  [-w2/2, d1/2, h1], // 8
+  [w1+w2/2, d1/2, h1], // 9
+  [-w2/2, -d1/2, h1], // 10
+  [w1+w2/2, -d1/2, h1], // 11
+  [w3/2, d1/2, h1-h2], // 12
+  [w1-w3/2, d1/2, h1-h2], // 13
+  [w3/2, -d1/2, h1-h2], // 14
+  [w1-w3/2, -d1/2, h1-h2], // 15
 ];
 
 HandleFaces = [
@@ -88,9 +93,17 @@ HandleFaces = [
   [13,15,2,0],           // Inside right
 ];
 
+//difference() {
+
 polyhedron(HandlePoints, HandleFaces);
 
+// Screw holes.
+translate([0,0,-hole_depth]) cylinder(d=hole_dia, h=hole_depth);
+translate([w1,0,-hole_depth]) cylinder(d=hole_dia, h=hole_depth);
+
 // Text on top of handle. Comment out if not desired.
-translate([35, 5, 25]) linear_extrude(1) {
- text("H E A T H K I T", 4);
+translate([w1/2, 0, h1]) linear_extrude(1) {
+ text(text="H E A T H K I T", size=4, halign="center", valign="center");
 }
+
+
