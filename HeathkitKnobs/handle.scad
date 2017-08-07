@@ -53,12 +53,11 @@ d2=27.1;
 // Slope of handle.
 slope=4.0;
 
-
 // Radius of upper curved corner.
 r1=7.0;
 
 // Radius of inner curved corner.
-r1=7.0;
+r2=5.0;
 
 // Adjustment to make sides planar.
 fudge=1.5;
@@ -134,8 +133,8 @@ difference() {
 }
 
 // Round inside corners.
-translate([w3-2, 0, h1-h2]) rotate([270, 0, 0]) fillet(r1, d1+3);
-translate([w1-w2+4, 0, h1-h2]) rotate([90, 180, 0]) fillet(r1, d1+3);
+translate([w3-2, 0, h1-h2]) rotate([270, 0, 0]) fillet(r2, d1+3);
+translate([w1-w2+4, 0, h1-h2]) rotate([90, 180, 0]) fillet(r2, d1+3);
 
 
 // Text on top of handle. Comment out if not desired.
