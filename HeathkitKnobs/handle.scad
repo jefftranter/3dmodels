@@ -103,9 +103,8 @@ HandleFaces = [
 ];
 
 // From  http://forum.openscad.org/rounded-corners-td3843.html
-// I use this module:
-// I either union it to an inside corner or difference it from an
-// outside one.
+// I use this module. I either union it to an inside corner or
+difference it from an outside one.
 
 module fillet(r, h) {
 
@@ -116,6 +115,8 @@ module fillet(r, h) {
             cylinder(r = r, h = h + 1, center = true);
     }
 }
+
+// Matrices used for sloped sides.
 
 M1 = [ [ 1, 0, 0, 0 ],
        [ 0, 1, 0.23, 0 ],
@@ -132,11 +133,11 @@ M2 = [ [ 1, 0, 0, 0 ],
 
 difference() {
 
-    {
+  {
 
-union() {
+  union() {
 
-difference() {
+  difference() {
 
     polyhedron(HandlePoints, HandleFaces);
 
@@ -162,7 +163,6 @@ translate([w1-w2+4, 0, h1-h2]) rotate([90, 180, 0]) fillet(r2, d2);
 union()
 translate([5,-23.6,0]) { multmatrix(M1) {cube([100,10,30]); } }
 translate([5,13.6,0]) { multmatrix(M2) {cube([100,10,30]); } }
-
 }
 }
 }

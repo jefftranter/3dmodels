@@ -1,4 +1,6 @@
-These are 3D models for some knobs for Heathkit equipment.
+These are 3D models for some knobs and other parts for Heathkit
+equipment. Most were used during the Heathkit design era known as the
+"Classic I" style.
 
 This work is licensed under a Creative Commons Attribution 4.0
 International License.
@@ -13,12 +15,14 @@ the Heathkit HR-10B.
 knob-small: Small sized knob used on test equipment and radios like
 the Heathkit HR-10B.
 
-pointer: White pointer that is mounted under the large knob on some
-models.
-
 knob-medium-concentric: Medium sized knob designed to have the small
 knob mounted concentric to it. The center knob is usually coloured
 red.
+
+pointer: White pointer that is mounted under the large knob on some
+models.
+
+handle: Small handle used on a lot of Heathkit test equipment.
 
 The .scad files are the original OpenSCAD files that were created by
 hand. The .stl files were generated from OpenSCAD and are suitable for
