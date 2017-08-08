@@ -117,6 +117,25 @@ module fillet(r, h) {
     }
 }
 
+M1 = [ [ 1, 0, 0, 0 ],
+       [ 0, 1, 0.23, 0 ],
+       [ 0, 0, 1, 0 ],
+       [ 0, 0, 0, 1 ]
+];
+
+M2 = [ [ 1, 0, 0, 0 ],
+       [ 0, 1, -0.23, 0 ],
+       [ 0, 0, 1, 0 ],
+       [ 0, 0, 0, 1 ]
+];
+
+
+difference() {
+
+    {
+
+union() {
+
 difference() {
 
     polyhedron(HandlePoints, HandleFaces);
@@ -130,12 +149,23 @@ difference() {
     // Round corners at top.
     translate([-2.5, 0, h1]) rotate([270, 0, 0]) fillet(r1, d2);
     translate([w1+2.5, 0, h1]) rotate([90, 180, 0]) fillet(r1, d2);
+
 }
 
 // Round inside corners.
-translate([w3-2, 0, h1-h2]) rotate([270, 0, 0]) fillet(r2, d1+3);
-translate([w1-w2+4, 0, h1-h2]) rotate([90, 180, 0]) fillet(r2, d1+3);
+translate([w3-2, 0, h1-h2]) rotate([270, 0, 0]) fillet(r2, d2);
+translate([w1-w2+4, 0, h1-h2]) rotate([90, 180, 0]) fillet(r2, d2);
 
+}
+
+{
+union()
+translate([5,-23.6,0]) { multmatrix(M1) {cube([100,10,30]); } }
+translate([5,13.6,0]) { multmatrix(M2) {cube([100,10,30]); } }
+
+}
+}
+}
 
 // Text on top of handle. Comment out if not desired.
 translate([w1/2, 0, h1]) linear_extrude(1) {
