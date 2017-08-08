@@ -104,7 +104,7 @@ HandleFaces = [
 
 // From  http://forum.openscad.org/rounded-corners-td3843.html
 // I use this module. I either union it to an inside corner or
-difference it from an outside one.
+// difference it from an outside one.
 
 module fillet(r, h) {
 
@@ -168,6 +168,6 @@ translate([5,13.6,0]) { multmatrix(M2) {cube([100,10,30]); } }
 }
 
 // Text on top of handle. Comment out if not desired.
-translate([w1/2, 0, h1]) linear_extrude(1) {
-    text(text="H E A T H K I T", size=4, halign="center", valign="center");
-}
+//translate([w1/2, 0, h1]) linear_extrude(1) {
+//    text(text="H E A T H K I T", size=4, halign="center", valign="center");
+//}
