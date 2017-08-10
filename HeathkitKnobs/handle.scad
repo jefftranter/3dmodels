@@ -63,7 +63,7 @@ r2=5.0;
 fudge=1.5;
 
 // Screw hole diameter.
-hole_dia=4.0;
+hole_dia=3.0;
 
 // Screw hole depth.
 hole_depth=20.0;
