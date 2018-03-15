@@ -1,11 +1,11 @@
-// Holder for FT 243 quartz crytsal
+// Holder for FT 243 quartz crystal
 //
 // Dimensions are in mm.
 
 $fn=64;
 
 // Thickness of walls
-thickness = 2.0;
+thickness = 3.0;
 
 // Width
 width = 20.6;
@@ -28,7 +28,7 @@ difference() {
 }
 
 // Holes for pins
-diameter = 2.3; // Pin diameter
+diameter = 2.4; // Pin diameter
 spacing = 12.0; // Spacing between pins
 
 translate([(width - spacing)/2, 5.0, height/2])
