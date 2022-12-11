@@ -24,6 +24,9 @@ models.
 
 handle: Small handle used on a lot of Heathkit test equipment.
 
+logo tag: Heathkit logo nameplate tag, as used on FM-3, FM-3A, XR-1,
+RX-1, etc.
+
 The .scad files are the original OpenSCAD files that were created by
 hand. The .stl files were generated from OpenSCAD and are suitable for
 loading into your 3D printer/slicer software, such as Cura.
